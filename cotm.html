@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PangaFi - Cuisine of the Month</title>
+    <link rel="stylesheet" href="cotm.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dim-overlay"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2">
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M8 8l8 8m0-8l-8 8"/>
+            </svg>
+            <span>PangaFi</span>
+        </div>
+        <div class="nav-actions">
+            <button class="nav-btn trending-btn" title="Hot Event">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffa500" stroke-width="2">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                </svg>
+            </button>
+            <button class="nav-btn burger-menu" title="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <div class="menu-content">
+            <a class="menu-tab" href="profile.html">Profile</a>
+            <a class="menu-tab active-tab" href="cotm.html">Cuisine of the Month</a>
+            <a class="menu-tab" href="camera.html">Camera</a>
+            <a class="menu-tab" href="collection.html">NFT Collection</a>
+            <a class="menu-tab" href="rewards.html">Rewards</a>
+            <a class="menu-tab" href="leaderboard.html">Leaderboard</a>
+        </div>
+    </div>
+
+    <section class="cotm-section">
+        <div class="winner-card">
+            <h3>Last Month's Winner</h3>
+            <div class="winner-content">
+                <img src="https://via.placeholder.com/150" alt="Winning Dish" class="winner-image">
+                <div class="winner-details">
+                    <p><strong>Chef:</strong> PangasinanChef</p>
+                    <p><strong>Dish:</strong> Bangus Sisig</p>
+                    <p><strong>Municipality:</strong> Lingayen</p>
+                    <p><strong>Award:</strong> 100 PANG Tokens + Recipe NFT</p>
+                </div>
+            </div>
+        </div>
+        <div class="contest-card">
+            <h3>Current Contest: Dagupan City</h3>
+            <p>This month, showcase a dish inspired by the culinary heritage of <strong>Dagupan City</strong>, known for its delicious Bangus (milkfish) dishes.</p>
+            <p><strong>Rules:</strong> Capture a photo of your original Dagupan-inspired dish using the Camera feature. Submit by May 31, 2025, for a chance to win 100 PANG Tokens and mint your recipe as an NFT!</p>
+            <a href="camera.html" class="cta-btn">Submit Entry</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2025 PangaFi. Built with Web3 love in Pangasinan.
+    </footer>
+
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const sidebar = document.querySelector('.sidebar');
+        const dimOverlay = document.querySelector('.dim-overlay');
+
+        burgerMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.toggle('active');
+            dimOverlay.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !burgerMenu.contains(e.target) && sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                dimOverlay.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
