@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PangaFi - Leaderboard</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="leaderboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dim-overlay"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc"
+                stroke-width="2">
+                <path
+                    d="M12 3a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9a9 9 0 0 0 9-9 9 9 0 0 0-9-9zm0 16a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7zm-4-8h3V8h2v3h3v2h-3v3h-2v-3H8v-2z" />
+            </svg>
+            <span>PangaFi</span>
+        </div>
+        <div class="nav-actions">
+            <a href="cotm.html">
+                <button class="nav-btn trending-btn" title="Trending Event">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2">
+                        <path
+                            d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                    </svg>
+                </button>
+            </a>
+            <button class="nav-btn burger-menu" title="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <div class="menu-content">
+            <a class="menu-tab" href="profile.html">Profile</a>
+            <a class="menu-tab" href="cotm.html">Cuisine of the Month</a>
+            <a class="menu-tab" href="camera.html">Camera</a>
+            <a class="menu-tab" href="collection.html">NFT Collection</a>
+            <a class="menu-tab" href="subscriptions.html">Subscription</a>
+            <a class="menu-tab active-tab" href="leaderboard.html">Leaderboard</a>
+        </div>
+    </div>
+
+    <section class="profile-section">
+        <div class="profile-header">
+            <h2 class="username">Leaderboard</h2>
+        </div>
+        <div class="profile-content">
+            <div class="wallet-card">
+                <h3>Your Ranking</h3>
+                <div class="ranking-info">
+                    <div class="user-rank">
+                        <span class="rank-number">#7</span>
+                        <div class="rank-user-info">
+                            <img src="userprofile.jpg" alt="Your Profile" class="rank-avatar">
+                            <div>
+                                <h4>Your Account</h4>
+                                <p>2,450 PNGA Points</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rank-progress">
+                        <p>320 points to next rank</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-card">
+                <h3>Filter Leaderboards</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Overall</button>
+                    <button class="filter-btn" data-filter="weekly">Weekly</button>
+                    <button class="filter-btn" data-filter="monthly">Monthly</button>
+                    <button class="filter-btn" data-filter="recipes">Recipes</button>
+                    <button class="filter-btn" data-filter="nfts">NFTs</button>
+                </div>
+            </div>
+
+            <div class="leaderboard-card">
+                <h3>Top Chefs</h3>
+                <div class="top-ranks">
+                    <div class="top-rank first-place">
+                        <div class="rank-medal">1</div>
+                        <img src="userprofile.jpg" alt="First Place" class="rank-avatar">
+                        <p class="rank-name">Chef Marcus</p>
+                        <p class="rank-points">4,210 pts</p>
+                    </div>
+                    <div class="top-rank second-place">
+                        <div class="rank-medal">2</div>
+                        <img src="userprofile.jpg" alt="Second Place" class="rank-avatar">
+                        <p class="rank-name">Chef Bella</p>
+                        <p class="rank-points">3,850 pts</p>
+                    </div>
+                    <div class="top-rank third-place">
+                        <div class="rank-medal">3</div>
+                        <img src="userprofile.jpg" alt="Third Place" class="rank-avatar">
+                        <p class="rank-name">Chef Diana</p>
+                        <p class="rank-points">3,680 pts</p>
+                    </div>
+                </div>
+                <div class="leaderboard-list">
+                    <div class="leaderboard-header">
+                        <span>Rank</span>
+                        <span>Chef</span>
+                        <span>Stats</span>
+                        <span>Points</span>
+                    </div>
+                    <div class="leaderboard-items" id="leaderboard-data">
+                        <!-- Leaderboard items will be populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2025 PangaFi. Built with Web3 love in Pangasinan.
+    </footer>
+
+    <script>
+        // Sample leaderboard data
+        const leaderboardData = [
+            {
+                rank: 4,
+                name: "Chef Antonio",
+                image: "userprofile.jpg",
+                nfts: 18,
+                recipes: 24,
+                points: 3450
+            },
+            {
+                rank: 5,
+                name: "Chef Sarah",
+                image: "userprofile.jpg",
+                nfts: 15,
+                recipes: 20,
+                points: 2980
+            },
+            {
+                rank: 6,
+                name: "Chef Miguel",
+                image: "userprofile.jpg",
+                nfts: 12,
+                recipes: 19,
+                points: 2780
+            },
+            {
+                rank: 7,
+                name: "Lorem Ipsum",
+                image: "userprofile.jpg",
+                nfts: 12,
+                recipes: 16,
+                points: 2450,
+                isCurrentUser: true
+            },
+            {
+                rank: 8,
+                name: "Chef Lisa",
+                image: "userprofile.jpg",
+                nfts: 10,
+                recipes: 15,
+                points: 2120
+            },
+            {
+                rank: 9,
+                name: "Chef Roberto",
+                image: "userprofile.jpg",
+                nfts: 8,
+                recipes: 14,
+                points: 1950
+            },
+            {
+                rank: 10,
+                name: "Chef Emma",
+                image: "userprofile.jpg",
+                nfts: 7,
+                recipes: 12,
+                points: 1820
+            }
+        ];
+
+        // Generate leaderboard items
+        function generateLeaderboardItems() {
+            const leaderboardContainer = document.getElementById('leaderboard-data');
+            leaderboardContainer.innerHTML = '';
+
+            leaderboardData.forEach(user => {
+                const userClass = user.isCurrentUser ? 'current-user' : '';
+                const row = document.createElement('div');
+                row.className = `leaderboard-row ${userClass}`;
+
+                row.innerHTML = `
+          <span class="rank-position">${user.rank}</span>
+          <div class="user-info">
+            <img src="${user.image}" alt="${user.name}" class="rank-avatar">
+            <span>${user.name}</span>
+          </div>
+          <div class="user-stats">
+            <span>${user.recipes} Recipes</span>
+            <span>${user.nfts} NFTs</span>
+          </div>
+          <span class="user-points">${user.points.toLocaleString()} pts</span>
+        `;
+
+                leaderboardContainer.appendChild(row);
+            });
+        }
+
+        // Initialize leaderboard
+        generateLeaderboardItems();
+
+        // Sidebar toggle functionality
+        const burgerMenu = document.querySelector('.burger-menu');
+        const sidebar = document.querySelector('.sidebar');
+        const dimOverlay = document.querySelector('.dim-overlay');
+
+        burgerMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.toggle('active');
+            dimOverlay.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !burgerMenu.contains(e.target) && sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                dimOverlay.classList.remove('active');
+            }
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Here we would implement filter logic based on the selected filter
+                const filterType = button.getAttribute('data-filter');
+                console.log(`Filter applied: ${filterType}`);
+                // For demonstration, we're just logging the filter type
+                // In a real application, this would filter the leaderboard data
+            });
+        });
+    </script>
+</body>
+
+</html>

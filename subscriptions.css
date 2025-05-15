@@ -1,0 +1,332 @@
+/* Styles specific to the subscriptions page */
+
+/* Current subscription section */
+.current-subscription {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.subscription-badge {
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+}
+
+.subscription-badge.basic {
+    background: linear-gradient(45deg, #00ffe7, #4bdfdb);
+}
+
+.subscription-badge.premium {
+    background: linear-gradient(45deg, #6e00ff, #9b4bff);
+}
+
+.subscription-badge.master {
+    background: linear-gradient(45deg, #ffd700, #ffcc00);
+}
+
+.subscription-details {
+    flex: 1;
+}
+
+.subscription-details p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.subscription-action {
+    margin-left: auto;
+}
+
+/* Subscription tiers */
+.subscription-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tier-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.basic-tier {
+    border: 1px solid rgba(0, 255, 231, 0.3);
+}
+
+.premium-tier {
+    border: 1px solid rgba(110, 0, 255, 0.3);
+    box-shadow: 0 0 20px rgba(110, 0, 255, 0.2);
+}
+
+.master-tier {
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: linear-gradient(45deg, #6e00ff, #9b4bff);
+    color: white;
+    padding: 0.25rem 2.5rem;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.tier-header {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tier-header h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.basic-tier .tier-header h4 {
+    color: #00ffe7;
+}
+
+.premium-tier .tier-header h4 {
+    color: #9b4bff;
+}
+
+.master-tier .tier-header h4 {
+    color: #ffd700;
+}
+
+.tier-price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #00ffe7, #6e00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.premium-tier .price {
+    font-size: 3rem;
+}
+
+.currency {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 0.25rem;
+}
+
+.period {
+    font-size: 1rem;
+    color: #ccc;
+    margin-left: 0.25rem;
+}
+
+.tier-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tier-description {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tier-features {
+    list-style-type: none;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.tier-features li {
+    color: #ccc;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.tier-features li::before {
+    content: "✓";
+    color: #00ffe7;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.premium-tier .tier-features li::before {
+    color: #9b4bff;
+}
+
+.master-tier .tier-features li::before {
+    color: #ffd700;
+}
+
+.tier-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: auto;
+}
+
+.basic-tier .tier-btn {
+    background: linear-gradient(45deg, #00ffe7, #4bdfdb);
+    color: #000;
+}
+
+.premium-tier .tier-btn {
+    background: linear-gradient(45deg, #6e00ff, #9b4bff);
+    color: #fff;
+}
+
+.master-tier .tier-btn {
+    background: linear-gradient(45deg, #ffd700, #ffcc00);
+    color: #000;
+}
+
+.tier-btn.current {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    border: 1px solid #ccc;
+    cursor: default;
+}
+
+.tier-btn:hover:not(.current) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ Section */
+.subscription-faq {
+    margin-top: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq-question {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.toggle-icon {
+    color: #00ffe7;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq-answer p {
+    color: #ccc;
+    padding-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .subscription-tiers {
+        grid-template-columns: 1fr;
+    }
+    
+    .current-subscription {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .subscription-details {
+        margin: 1rem 0;
+    }
+    
+    .subscription-action {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .subscription-action .cta-btn {
+        width: 100%;
+    }
+    
+    .tier-header {
+        padding: 1rem;
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+    
+    .premium-tier .price {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tier-header h4 {
+        font-size: 1.2rem;
+    }
+    
+    .price {
+        font-size: 1.8rem;
+    }
+    
+    .premium-tier .price {
+        font-size: 2rem;
+    }
+    
+    .tier-description {
+        font-size: 0.85rem;
+    }
+    
+    .tier-features li {
+        font-size: 0.9rem;
+    }
+    
+    .popular-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 2rem;
+    }
+} 

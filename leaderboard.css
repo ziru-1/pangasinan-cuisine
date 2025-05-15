@@ -1,0 +1,359 @@
+/* Styles specific to the leaderboard page */
+
+/* User ranking card */
+.ranking-info {
+    padding: 0.5rem 0;
+}
+
+.user-rank {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.rank-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #00ffe7, #6e00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rank-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rank-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ffe7;
+}
+
+.rank-user-info h4 {
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.rank-user-info p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.rank-progress {
+    margin-top: 0.5rem;
+}
+
+.rank-progress p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #00ffe7, #6e00ff);
+    border-radius: 3px;
+}
+
+/* Filter buttons styling */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid #6e00ff;
+    color: #ccc;
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: #00ffe7;
+    box-shadow: 0 0 10px rgba(0, 255, 231, 0.3);
+    color: #fff;
+}
+
+.filter-btn.active {
+    background: linear-gradient(to right, #00ffe7, #6e00ff);
+    border: none;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 231, 0.5);
+}
+
+/* Leaderboard card */
+.leaderboard-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 255, 231, 0.2);
+}
+
+.leaderboard-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #00ffe7, #6e00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Top rankings */
+.top-ranks {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.top-rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.first-place {
+    order: 2;
+    margin-bottom: -0.5rem;
+    transform: scale(1.1);
+}
+
+.second-place {
+    order: 1;
+}
+
+.third-place {
+    order: 3;
+}
+
+.rank-medal {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.first-place .rank-medal {
+    background: linear-gradient(45deg, #ffd700, #ffcc00);
+    color: #000;
+}
+
+.second-place .rank-medal {
+    background: linear-gradient(45deg, #c0c0c0, #e0e0e0);
+    color: #000;
+}
+
+.third-place .rank-medal {
+    background: linear-gradient(45deg, #cd7f32, #b87333);
+    color: #000;
+}
+
+.first-place .rank-avatar {
+    width: 90px;
+    height: 90px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.second-place .rank-avatar,
+.third-place .rank-avatar {
+    width: 70px;
+    height: 70px;
+}
+
+.second-place .rank-avatar {
+    border: 2px solid #c0c0c0;
+}
+
+.third-place .rank-avatar {
+    border: 2px solid #cd7f32;
+}
+
+.rank-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.25rem;
+    color: #fff;
+}
+
+.rank-points {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* Leaderboard list */
+.leaderboard-list {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.leaderboard-header {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 1fr;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    color: #fff;
+}
+
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 1fr;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s;
+}
+
+.leaderboard-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-row:last-child {
+    border-bottom: none;
+}
+
+.rank-position {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info .rank-avatar {
+    width: 35px;
+    height: 35px;
+    border-width: 1px;
+}
+
+.user-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.user-points {
+    font-weight: 700;
+    color: #00ffe7;
+}
+
+.current-user {
+    background: rgba(0, 255, 231, 0.05);
+    box-shadow: 0 0 15px rgba(0, 255, 231, 0.1) inset;
+    border-left: 3px solid #00ffe7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-ranks {
+        gap: 1rem;
+    }
+    
+    .first-place .rank-avatar {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .second-place .rank-avatar,
+    .third-place .rank-avatar {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .leaderboard-header,
+    .leaderboard-row {
+        grid-template-columns: 0.5fr 1.5fr 1.5fr 1fr;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-ranks {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .first-place,
+    .second-place,
+    .third-place {
+        order: unset;
+        transform: none;
+    }
+    
+    .top-rank {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0.5rem;
+    }
+    
+    .rank-medal {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+    }
+    
+    .first-place .rank-avatar,
+    .second-place .rank-avatar,
+    .third-place .rank-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .user-rank {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .rank-number {
+        font-size: 2rem;
+    }
+    
+    .leaderboard-header,
+    .leaderboard-row {
+        grid-template-columns: 0.5fr 2fr 0 1fr;
+    }
+    
+    .leaderboard-header span:nth-child(3),
+    .user-stats {
+        display: none;
+    }
+} 
